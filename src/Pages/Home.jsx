@@ -13,11 +13,7 @@ const Home = () => {
   const el = React.useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: [
-        "Frontend Developers",
-        "Backend Developers",
-        "Graphic Designers",
-      ],
+      strings: ["Web Developers", "Graphics Designers", "App Developers"],
       smartBackspace: true,
       typeSpeed: 50,
       showCursor: false,
