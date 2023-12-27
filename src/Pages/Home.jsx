@@ -58,9 +58,9 @@ const Home = () => {
           To The Site Of
         </h1>
         <h2
-          style={{
-            WebkitTextStroke: `${dark == true ? "2px white" : "2px black"}`,
-          }}
+          // style={{
+          //   WebkitTextStroke: `${dark == true ? "2px white" : "2px black"}`,
+          // }}
           ref={el}
         ></h2>
         <i

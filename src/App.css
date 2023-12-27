@@ -73,7 +73,7 @@
 .hero-sect h2 {
   font-size: 4rem;
   text-transform: uppercase;
-  color: transparent;
+  color: orange;
   transition: 0.3s;
 }
 
@@ -121,7 +121,9 @@
   }
 
   .hero-sect h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    color: orange;
+    -webkit-text-stroke: 0;
   }
 
   .theme-switch {
