@@ -125,7 +125,7 @@
   top: calc(50% - 25px);
   right: 20px;
   display: flex;
-  border: 1px solid orange;
+  background: white;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
@@ -184,8 +184,34 @@
 }
 
 .active {
-  color: transparent;
-  -webkit-text-stroke: 1px orange;
+  color: orange;
+  padding: 10px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.active::after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 2px solid;
+  border-width: 2px 2px 0 0;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  transition: 0.3s;
+}
+
+.active::before {
+  content: "";
+  width: 50px;
+  height: 50px;
+  border: 2px solid;
+  border-width: 0 0 2px 2px;
+  position: absolute;
+  bottom: 0;
+  left: -20px;
+  transition: 0.3s;
 }
 
 .close-btn {
@@ -194,6 +220,46 @@
   top: 20px;
   right: 20px;
   cursor: pointer;
+}
+
+.about-page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: black;
+}
+
+.about-page img {
+  width: 300px;
+}
+
+.about-page div {
+  width: 550px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.about-page button {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+
+.about-page h1 {
+  text-transform: uppercase;
+}
+
+.about-page p {
+  text-transform: uppercase;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 600px) {
@@ -216,5 +282,14 @@
   }
   .logo h1 span {
     font-size: 1rem;
+  }
+  .about-page {
+    flex-direction: column;
+  }
+  .about-page div {
+    max-width: 350px;
+  }
+  .about-page img {
+    width: 200px;
   }
 }

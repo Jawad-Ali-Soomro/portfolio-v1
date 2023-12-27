@@ -29,13 +29,23 @@ const Home = () => {
       <div className="header">
         <div className="logo">
           <h1>
-            <h2>WEB</h2> <span>TECH</span>
+            <h2>WEB</h2>
+            <span>TECH</span>
           </h1>
         </div>
         <div className="main-menu" onClick={() => handleClick(true)}>
-          <div className="bar" style={{ background: "orange" }}></div>
-          <div className="bar" style={{ background: "orange" }}></div>
-          <div className="bar" style={{ background: "orange" }}></div>
+          <div
+            className="bar"
+            style={{ background: `${dark == true ? "white" : "black"}` }}
+          ></div>
+          <div
+            className="bar"
+            style={{ background: `${dark == true ? "white" : "black"}` }}
+          ></div>
+          <div
+            className="bar"
+            style={{ background: `${dark == true ? "white" : "black"}` }}
+          ></div>
         </div>
       </div>
       <div
@@ -51,7 +61,10 @@ const Home = () => {
         <h1 style={{ color: `${dark == true ? "white" : "black"}` }}>
           To The Site Of
         </h1>
-        <h2 ref={el}></h2>
+        <h2
+          ref={el}
+          style={{ color: `${dark == true ? "white" : "black"}` }}
+        ></h2>
         <i
           style={{ color: `${dark == true ? "white" : "black"}` }}
           className="uil uil-arrow-down arrow-down"
@@ -85,7 +98,7 @@ const Home = () => {
       >
         <i
           className="uil uil-multiply close-btn"
-          style={{ color: "orange" }}
+          style={{ color: `${dark == true ? "white" : "black"}` }}
           onClick={() => handleClick(false)}
         ></i>
         {tab == "/" ? (
@@ -94,7 +107,7 @@ const Home = () => {
           </a>
         ) : (
           <a
-            href=""
+            href="/"
             className="not-active"
             style={{ color: `${dark == true ? "white" : "black"}` }}
             onClick={(e) => e.preventDefault() + setTab("/")}
@@ -103,12 +116,12 @@ const Home = () => {
           </a>
         )}
         {tab == "/About" ? (
-          <a href="" className="active">
+          <a href="#about" className="active">
             About
           </a>
         ) : (
           <a
-            href=""
+            href="#about"
             className="not-active"
             style={{ color: `${dark == true ? "white" : "black"}` }}
             onClick={(e) => e.preventDefault() + setTab("/About")}
@@ -158,6 +171,38 @@ const Home = () => {
             Contact
           </a>
         )}
+      </div>
+      <div
+        className="about-page"
+        id="about"
+        style={{
+          background: `${dark == true ? "black" : "white"}`,
+          color: `${dark == true ? "white" : "black"}`,
+        }}
+      >
+        <img src="./about.svg" alt="" />
+        <div className="content">
+          <h1>About Us</h1>
+          <p>
+            Welcome to the forefront of digital excellence – a space where
+            innovation converges seamlessly with expertise. We are a dynamic
+            collective of web developers, graphic designers, and app developers
+            dedicated to crafting unparalleled digital experiences. Our identity
+            is rooted in a passion for challenges and a commitment to
+            transforming ideas into extraordinary digital realities. Journey
+            with us as we navigate the ever-evolving digital landscape, driven
+            by a relentless pursuit of excellence and a deep understanding of
+            the industry.
+          </p>
+          <button
+            style={{
+              background: `${dark == true ? "#ffffff1c" : "orange"}`,
+              color: `${dark == true ? "white" : "white"}`,
+            }}
+          >
+            Read More
+          </button>
+        </div>
       </div>
     </div>
   );
