@@ -34,8 +34,8 @@
 
 .main-menu {
   display: flex;
-  justify-content: center;
-  align-content: center;
+  justify-content: start;
+  align-items: end;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
@@ -43,19 +43,19 @@
 }
 
 .main-menu .bar:nth-child(1) {
-  transform: translateX(10px);
+  width: 20px;
 }
 
 .main-menu .bar:nth-child(3) {
-  transform: translateX(10px);
+  width: 20px;
 }
 
 .main-menu:hover .bar:nth-child(1) {
-  transform: translateX(0);
+  width: 30px;
 }
 
 .main-menu:hover .bar:nth-child(3) {
-  transform: translateX(0);
+  width: 30px;
 }
 
 .main-menu .bar {
