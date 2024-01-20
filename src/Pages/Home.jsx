@@ -3,7 +3,7 @@ import Typed from "typed.js";
 import { useEffect } from "react";
 
 const Home = () => {
-  const [showAbout, setShowAbout] = useState(true);
+  const [showAbout, setShowAbout] = useState(false);
   const [click, handleClick] = useState(false);
   const [dark, setDark] = useState(false);
   const [tab, setTab] = useState("/");
