@@ -3,6 +3,7 @@ import Typed from "typed.js";
 import { useEffect } from "react";
 
 const Home = () => {
+  const [showAbout, setShowAbout] = useState(true);
   const [click, handleClick] = useState(false);
   const [dark, setDark] = useState(false);
   const [tab, setTab] = useState("/");
@@ -13,7 +14,7 @@ const Home = () => {
   const el = React.useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: ["Web Developers", "Graphics Designers", "App Developers"],
+      strings: ["APP Developer", "Graphics Designer", "Flutter Developer"],
       smartBackspace: true,
       typeSpeed: 50,
       showCursor: false,
@@ -29,8 +30,8 @@ const Home = () => {
       <div className="header">
         <div className="logo">
           <h1>
-            <h2>WEB</h2>
-            <span>TECH</span>
+            <h2>SAN</h2>
+            <span>DESH</span>
           </h1>
         </div>
         <div className="main-menu" onClick={() => handleClick(true)}>
@@ -110,12 +111,12 @@ const Home = () => {
             href="/"
             className="not-active"
             style={{ color: `${dark == true ? "white" : "black"}` }}
-            onClick={(e) => e.preventDefault() + setTab("/")}
+            onClick={(e) => setTab("/")}
           >
             Home
           </a>
         )}
-        {tab == "/About" ? (
+        {tab == "#About" ? (
           <a href="#about" className="active">
             About
           </a>
@@ -124,7 +125,7 @@ const Home = () => {
             href="#about"
             className="not-active"
             style={{ color: `${dark == true ? "white" : "black"}` }}
-            onClick={(e) => e.preventDefault() + setTab("/About")}
+            onClick={(e) => setTab("#About")}
           >
             About
           </a>
@@ -180,30 +181,65 @@ const Home = () => {
           color: `${dark == true ? "white" : "black"}`,
         }}
       >
-        <img src="./about.svg" alt="" />
+        <img src="./hero.jpg" alt="" />
         <div className="content">
-          <h1>About Us</h1>
+          <h1>About Me</h1>
           <p>
-            Welcome to the forefront of digital excellence – a space where
-            innovation converges seamlessly with expertise. We are a dynamic
-            collective of web developers, graphic designers, and app developers
-            dedicated to crafting unparalleled digital experiences. Our identity
-            is rooted in a passion for challenges and a commitment to
-            transforming ideas into extraordinary digital realities. Journey
-            with us as we navigate the ever-evolving digital landscape, driven
-            by a relentless pursuit of excellence and a deep understanding of
-            the industry.
+            Hello! I'm Sandesh Kumar, a passionate computer science graduate
+            with a knack for creating captivating digital experiences. My
+            journey into the world of technology started with a simple curiosity
+            and has evolved into a dedication to crafting innovative solutions.
           </p>
           <button
             style={{
               background: `${dark == true ? "#ffffff1c" : "orange"}`,
               color: `${dark == true ? "white" : "white"}`,
             }}
+            onClick={() => setShowAbout(true)}
           >
             Read More
           </button>
         </div>
       </div>
+      {showAbout == true ? (
+        <div className="about-me">
+          <i
+            className="uil uil-multiply close-btn"
+            onClick={() => setShowAbout(false)}
+          ></i>
+          <div className="heading">
+            <h1>About</h1>
+            <p>
+              Hello! I'm Sandesh Kumar, a passionate computer science graduate
+              with a knack for creating captivating digital experiences. My
+              journey into the world of technology started with a simple
+              curiosity and has evolved into a dedication to crafting innovative
+              solutions.
+            </p>
+            <h1>mission</h1>
+            <p>
+              As a 2023 graduate in computer science, I've honed my skills and
+              found my true passion in Flutter, Google's UI toolkit for building
+              natively compiled applications for mobile, web, and desktop from a
+              single codebase. Specializing in this versatile framework, I
+              thrive on creating seamless and visually striking cross-platform
+              applications that leave a lasting impression.
+            </p>
+            <h1>Vision</h1>
+            <p>
+              {" "}
+              My portfolio is a showcase of my commitment to excellence in
+              mobile app development. Each project is a testament to my
+              expertise in Flutter, where I seamlessly blend creativity with
+              functionality to deliver user-centric solutions. From intuitive
+              user interfaces to optimized performance, I bring a holistic
+              approach to every project.
+            </p>
+          </div>
+        </div>
+      ) : (
+        this
+      )}
     </div>
   );
 };
