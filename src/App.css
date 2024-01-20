@@ -294,6 +294,12 @@
   .about-page img {
     width: 200px;
   }
+  .about-me div h1 {
+    font-size: 1.5rem !important;
+  }
+  .about-me div {
+    max-width: 350px;
+  }
 }
 
 .about-me {
@@ -315,7 +321,7 @@
   width: 600px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
   gap: 10px;
 }
@@ -323,10 +329,6 @@
   text-transform: uppercase;
   font-size: 3rem;
   color: orange;
-}
-
-.about-me div p {
-  text-align: center;
 }
 
 .about-me .close-btn {
