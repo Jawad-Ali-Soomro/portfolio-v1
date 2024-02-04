@@ -1,11 +1,42 @@
 import React, { useState } from "react";
-import {} from "react-icons/bi";
+import {
+  BiCross,
+  BiLogoAdobe,
+  BiLogoAndroid,
+  BiLogoBootstrap,
+  BiLogoCss3,
+  BiLogoHtml5,
+  BiLogoJavascript,
+  BiLogoReact,
+  BiPen,
+} from "react-icons/bi";
+import { FaLongArrowAltDown, FaLongArrowAltRight } from "react-icons/fa";
+import { HiArrowNarrowDown } from "react-icons/hi";
 
 const Home = () => {
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
+  const handleMouseMove = (e) => {
+    setCoordinates({ x: e.clientX, y: e.clientY });
+  };
   const [showMenu, steShowMenu] = useState(false);
   const [tab, setTab] = useState(window.location.pathname);
   return (
-    <div className="home-page flex col">
+    <div className="home-page flex col" onMouseMove={handleMouseMove}>
+      <div
+        className="cutom-cursor"
+        style={{
+          position: "absolute",
+          left: `${coordinates.x}px`,
+          top: `${coordinates.y}px`,
+          border: "none",
+          color: "white",
+          transform: "translate(-50% , -50%)",
+          cursor: "none",
+        }}
+        onMouseMove={handleMouseMove}
+      >
+        <BiCross style={{ fontSize: "2rem" }} />
+      </div>
       <div className="top-nav flex between">
         <div className="logo">
           <a href="" className="flex">
@@ -13,8 +44,8 @@ const Home = () => {
             <span>awad</span>
           </a>
         </div>
-        <div className="navs">
-          <div className="icon flex col" onClick={() => steShowMenu(true)}>
+        <div className="navs" onClick={() => steShowMenu(true)}>
+          <div className="icon flex col">
             <div className="flex" style={{ gap: "5px" }}>
               <div className="circle"></div>
               <div className="circle"></div>
