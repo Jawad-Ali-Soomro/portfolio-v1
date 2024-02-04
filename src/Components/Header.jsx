@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 
 const Header = () => {
+  const [tab, setTab] = useState(window.location.pathname);
   const [mobileScreen, setMobileScreen] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   useEffect(() => {
-    const settingMoblieFn = () => {
+    const handleResize = () => {
       if (window.innerWidth < 800) {
         setMobileScreen(true);
       } else {
@@ -12,10 +13,15 @@ const Header = () => {
       }
     };
 
+    // Initial check
+    handleResize();
+
+    // Event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Cleanup the event listener on component unmount
     return () => {
-      setInterval(() => {
-        settingMoblieFn();
-      }, 10);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
@@ -81,7 +87,7 @@ const Header = () => {
           </a>
           <div className="navs">
             <ul className="flex">
-              <li>Home</li>
+              {tab == "/" ? <li className="active">Home</li> : <li>Home</li>}
               <li>About</li>
               <li>Projects</li>
               <li>Contact</li>
