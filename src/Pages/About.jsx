@@ -1,5 +1,22 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaHtml5 } from "react-icons/fa";
+import {
+  BiLogoAndroid,
+  BiLogoAws,
+  BiLogoBehance,
+  BiLogoBootstrap,
+  BiLogoCPlusPlus,
+  BiLogoCss3,
+  BiLogoDevTo,
+  BiLogoDjango,
+  BiLogoDribbble,
+  BiLogoGit,
+  BiLogoGithub,
+  BiLogoJavascript,
+  BiLogoReact,
+  BiLogoRedux,
+} from "react-icons/bi";
 
 const About = () => {
   const naviagate = useNavigate();
@@ -34,7 +51,7 @@ const About = () => {
             <h2>2020-2024</h2>
             <p>
               doing my bachelors in information technology from hec recognized
-              university with aggrigate 3.5 Gpa.
+              university with aggregate 3.5 Gpa.
             </p>
           </div>
           <div className="dots">
@@ -51,7 +68,23 @@ const About = () => {
   function My_Skills() {
     return (
       <div className="about-sect">
-        <h1>Skills ME</h1>
+        <div className="skills-sect">
+          <FaHtml5 className="icon" />
+          <BiLogoCss3 className="icon" />
+          <BiLogoJavascript className="icon" />
+          <BiLogoAndroid className="icon" />
+          <BiLogoAws className="icon" />
+          <BiLogoBehance className="icon" />
+          <BiLogoDribbble className="icon" />
+          <BiLogoReact className="icon" />
+          <BiLogoRedux className="icon" />
+          <BiLogoGit className="icon" />
+          <BiLogoGithub className="icon" />
+          <BiLogoBootstrap className="icon" />
+          <BiLogoCPlusPlus className="icon" />
+          <BiLogoDevTo className="icon" />
+          <BiLogoDjango className="icon" />
+        </div>
       </div>
     );
   }

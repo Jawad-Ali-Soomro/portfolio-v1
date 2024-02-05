@@ -484,6 +484,21 @@ a {
   text-transform: uppercase;
 }
 
+.about-sect .skills-sect {
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 80%;
+}
+
+.skills-sect .icon {
+  font-size: 5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
 @keyframes animate {
   0% {
     opacity: 0;
