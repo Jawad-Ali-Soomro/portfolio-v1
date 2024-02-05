@@ -1,16 +1,69 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Home = () => {
-  const navigate = useNavigate();
+const About = () => {
+  const naviagate = useNavigate();
+  function About_Me() {
+    return (
+      <div className="about-sect">
+        <h1>About ME</h1>
+        <p>
+          I'm a versatile IT professional, adept web developer, and
+          cybersecurity expert. With a passion for technology, they excel in
+          creating seamless web experiences and implementing robust security
+          measures. A strategic thinker, I actively contributes innovative
+          solutions to complex IT challenges, making a significant impact in the
+          dynamic fields of web development and cybersecurity.
+        </p>
+      </div>
+    );
+  }
+  function My_Education() {
+    return (
+      <div className="about-sect">
+        <h1>my education</h1>
+        <p>
+          <div className="dots">
+            <h2>2018-2020</h2>
+            <p>
+              Done My Hsc from my city college with 90% academic records in pre
+              medical
+            </p>
+          </div>
+          <div className="dots">
+            <h2>2020-2024</h2>
+            <p>
+              doing my bachelors in information technology from hec recognized
+              university with aggrigate 3.5 Gpa.
+            </p>
+          </div>
+          <div className="dots">
+            <h2>2023-2024</h2>
+            <p>
+              done my bootcamp from government delievered via the iba university
+              sukkur with 90% academic record
+            </p>
+          </div>
+        </p>
+      </div>
+    );
+  }
+  function My_Skills() {
+    return (
+      <div className="about-sect">
+        <h1>Skills ME</h1>
+      </div>
+    );
+  }
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
   const handleMouseMove = (e) => {
     setCoordinates({ x: e.clientX, y: e.clientY });
   };
-  const [showMenu, steShowMenu] = useState(false);
   const [tab, setTab] = useState(window.location.pathname);
+  const [showMenu, steShowMenu] = useState(false);
+  const [activeInfo, setActiveInfo] = useState(1);
   return (
-    <div className="home-page flex col" onMouseMove={handleMouseMove}>
+    <div className="about-me flex" onMouseMove={handleMouseMove}>
       <div
         className="cutom-cursor flex"
         style={{
@@ -65,17 +118,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="content">
-        <h1>
-          Hey There! I'm Jawad <br />
-          You Can Call ME MR Jawad
-        </h1>
-        <p>I am Web Developer , Ui/ux designer & full stack developer</p>
-        <div className="btns">
-          <button>See My Projects</button>
-          <button>About ME</button>
-        </div>
-      </div>
       <div
         className="main-menu"
         style={{ maxWidth: `${showMenu == true ? "100%" : "0%"}` }}
@@ -86,8 +128,12 @@ const Home = () => {
         ></i>
         <div className="menu-navs">
           <ul>
-            {tab == "/" ? <li className="active">Home</li> : <li>home</li>}
-            <li onClick={() => navigate("/about")}>About</li>
+            <li onClick={() => naviagate("/")}>Home</li>
+            {tab == "/about" ? (
+              <li className="active">About</li>
+            ) : (
+              <li>About</li>
+            )}
             <li>Contact</li>
             <li>Projects</li>
           </ul>
@@ -114,8 +160,34 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <div className="about-content">
+        <div className="toggler">
+          <ul>
+            {activeInfo == 1 ? (
+              <li className="active">About</li>
+            ) : (
+              <li onClick={() => setActiveInfo(1)}>About</li>
+            )}
+            {activeInfo == 2 ? (
+              <li className="active">Education</li>
+            ) : (
+              <li onClick={() => setActiveInfo(2)}>Education</li>
+            )}
+            {activeInfo == 3 ? (
+              <li className="active">Skills</li>
+            ) : (
+              <li onClick={() => setActiveInfo(3)}>Skills</li>
+            )}
+          </ul>
+        </div>
+        <div className="main-content">
+          {activeInfo === 1 ? <About_Me /> : this}
+          {activeInfo === 2 ? <My_Education /> : this}
+          {activeInfo === 3 ? <My_Skills /> : this}
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default About;
